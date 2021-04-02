@@ -48,7 +48,7 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  background: $secondary10;
+  background: #f5f5fa;
 }
 
 .auth-content {
@@ -189,13 +189,6 @@ a:hover {
   transition: all 0.3s ease-in-out;
 }
 
-.auth-checkbox {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 30px;
-  color: $text25;
-}
-
 .auth-header {
   text-align: center;
   margin-bottom: 50px;
@@ -310,7 +303,7 @@ nav ul {
     display: block;
   }
   .page-wrapper {
-    padding: 50px 0 0 0;
+    padding: 70px 0 0 0;
   }
   .topbar {
     padding: 0 39px;

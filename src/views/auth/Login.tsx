@@ -99,18 +99,9 @@ function Login() {
                       required
                     />
                   </div>
-                  <div className="auth-checkbox">
-                    <div className="d-flex align-items-center">
-                      <input
-                        type="checkbox"
-                        name="isLoggedIn"
-                        id="isLoggedIn"
-                        className="mr-1"
-                      />
-                      <label htmlFor="isLoggedIn">Keep me logged in</label>
-                    </div>
-                    <div>
-                      <Link to="/forgotpassword">Forgot Password</Link>
+                  <div className="d-flex justify-content-end">
+                    <div className="mb-2">
+                      <Link to="/forgotpassword">Forgot Password?</Link>
                     </div>
                   </div>
                   <div className="form-group">

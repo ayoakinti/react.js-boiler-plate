@@ -1,5 +1,5 @@
 # React.js + TypeScript Boiler plate
-# Useful to quick-start applications that involve authentication and dashboard
+# Useful to quick-start applications that involve authentication and dashboard. Just edit basic styling and add extra components/views
 # To test you have to run the local server with yarn serve and login with 
     username: reactboiletplatetest@gmail.com
     password: boilertest

@@ -1,143 +1,46 @@
-Real World Vue.js Boilerplate
-This project based on real world practice and ready to use. Have a fun!
+# Getting Started with Create React App
 
-Features
-Http request class that implements API calls with Auth and tokens refresh based on Axios
-Data access layer/API calls
-Response wrapper/Response error wrapper
-Base common and layout components
-Some help mixins
-Vue CLI v4
-Developed to work with: https://github.com/zmts/supra-api-nodejs
-Project structure
-src
-assets
-components
-config
-directives
-layout
-mixins
-pages
-plugins
-router
-scss
-services
-store
-.env.js
-main.js
-src
-Source =)
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-assets
-Images/Fonts/Other media stuff.
+## Available Scripts
 
-components
-Shared components folder.
+In the project directory, you can run:
 
-DataBox wrap in this component any received data. It represents loading(spinloader animation), error and empty statuses (examaple in src/pages/News.vue).
-UiImgLoader - img tag wrapper. Shows image loading(pulseloader animation) status and animate onloading as option.
-UiModal - simple modal window.
-PulseLoading and SpinnerWave - loading animation.
-UiUploadMulti and UiUploadSingle - file upload example components.
-...
-config
-App config files. Each category in separate file.
+### `yarn start`
 
-directives
-Handy debounce directive
-layout
-Base app layout components.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Header, Footer components and main layout wrapper.
-mixins
-One method/prop per file principle.
-Name files same as method/prop.
-currentUser - Includes current user object from store. Global.
-formatDateTime - Datetime moment formatters. Global.
-jumpTo - Help jump to some DOM element. Global.
-prepareFetchParamsMixin - Prepare params for data fetching (examaple in src/pages/News.vue).
-prepareQueryParamsMixin - Prepare params for setting it in URL (examaple in src/pages/News.vue).
-setModelMixin - Use to set same fields from response that declared in front-end model.
-pages
-Page wrapper components(Pages) and Local components.
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-plugins
-globalEventBus - $bus.
-router
-Router instance and routing declaration.
+### `yarn test`
 
-index - router initialization.
-routes - routing.
-middlewares:
-initCurrentUserStateMiddleware - Current user state initialization (each time app loads, check refresh token and fetch current user if token exist.)
-checkAccessMiddleware - Each time user change route, check permissions to route.
-setPageTitleMiddleware - Each time user change route, set page title.
-util:
-routePropResolver - Pass params from URL to component as props (example in src/router/routes.js)
-scss
-Style files(partials, variables, mixins, reset).
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-services
-Data access layer/API calls.
+### `yarn build`
 
-ES6 API calls classes.
-API calls must be represented in separate classes (not in vuex action).
-auth.service - Auth methods and API calls.
-http.init - Http request class.
-util:
-ResponseWrapper - Represent response object.
-ErrorWrapper - Represent error object.
-clearData - Uses to clear request data before send it. Helper.
-store
-App store with separate modules.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-.env.js
-Environment variables (add this to git ignore).
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-main.js
-Root app initialization file.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-global.helpers.js
-Add global helpers to window object. Yepp globals ... =)
+### `yarn eject`
 
-How to declare global SCSS variables/mixins etc... ?
-In /build/utils.js >> generateLoaders('sass')
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-Utils/Helpers
-What about debounce ?
-import debounce from '../directives/debounce'
-directives: {
-  debounce
-}
-And use it in a template.
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-<input type="text" v-model="name" v-debounce="500" @debounce-change="runSomeMethod">
-Notifications/Toast:
-Just make mutation
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-commit('dom/TOAST', { message: 'hello', duration: 2000, type: 'success' })
-Icons/SVG:
-Set up yours svg icons in src/components/icons/ folder. Modify UiIconBase.vue related to yours newly added icons and use it in template.
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-<UiIconBase size="40" color="yellow" icon="write"/>
-Build Setup
-# clone repo
-git clone https://github.com/zmts/vuejs-boilerplate.git
+## Learn More
 
-# install dependencies
-npm install
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-# serve with hot reload at localhost:8080
-npm run serve
-
-# build for production with minification
-npm run build
-For a detailed explanation on how things work, check out the guide and docs for vue-loader.
-
-Amazing repos where I found some great approaches:
-https://github.com/sdras/vue-sample-svg-icons
-https://github.com/MillerRen/vue-boilerplate
-https://github.com/vuejs-tips/v-debounce
-!!! Project still in progress !!!
-
-2017 - 2018 - 2019 - 2020 ...
+To learn React, check out the [React documentation](https://reactjs.org/).

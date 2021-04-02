@@ -1,8 +1,8 @@
 # React.js + TypeScript Boiler plate
 # Useful to quick-start applications that involve authentication and dashboard. Just edit basic styling and add extra components/views
 # To test you have to run the local server with yarn serve and login with 
-    username: reactboiletplatetest@gmail.com
-    password: boilertest
+    username: reactboilerplate@gmail.com
+    password: boilerplate
 
 This project based on real world practice and ready to use. Have a fun!
 
@@ -10,8 +10,8 @@ This project based on real world practice and ready to use. Have a fun!
 - Redux with TypeScript setup with login example
 - Thunk middleware + combine Reducers
 - Login server.js file included to initiate the login server
-    username: reactboiletplatetest@gmail.com
-    password: boilertest
+    username:  reactboilerplate@gmail.com
+    password: boilerplate
 - Response wrapper and SideMenu for mobile
 - Common Layout components (Authentication Pages, SideMenu, Header, Settings)
 - Create React App + TypeScript

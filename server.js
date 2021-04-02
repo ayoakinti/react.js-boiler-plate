@@ -11,14 +11,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
 app.use("/login", (req, res) => {
-  req.body.email === "reactboiletplatetest@gmail.com" &&
-  req.body.password === "boilertest"
+  req.body.email === "reactboilerplate@gmail.com" &&
+  req.body.password === "boilerplate"
     ? res.status(200).json({
         token: "test123",
         user: {
           firstName: "React",
           lastName: "Tester",
-          email: "reactboiletplatetest@gmail.com",
+          email: "reactboilerplate@gmail.com",
         },
       })
     : res.status(403).json({

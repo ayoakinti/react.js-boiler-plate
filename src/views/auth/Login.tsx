@@ -3,9 +3,14 @@ import { Link, useHistory } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 import { login } from "../../actions/auth";
 import { useDispatch } from "react-redux";
+import Loader from "../../components/Loader";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 function Login() {
   const history = useHistory();
+  const [loading, setLoading] = useState<boolean>(false);
+  const [message, setMessage] = useState<string>("");
 
   const dispatch = useDispatch();
 
@@ -33,18 +38,39 @@ function Login() {
     });
   };
 
+  const closeToast = () => {
+    setMessage("");
+  };
+
   const handleLogin = async (e: React.SyntheticEvent<EventTarget>) => {
     e.preventDefault();
-    console.log(loginInput, "login input");
+    setLoading(true);
     try {
-      await dispatch(login(loginInput))
-      history.push('/')
+      await dispatch(login(loginInput));
+      history.push("/");
     } catch (error) {
-      console.error(error.response.data.message);
+      // console.error(error.response.data.message);
+      setMessage(error.response.data.message);
+      setLoading(false);
+      // setTimeout(() => {
+      //   setMessage("");
+      // }, 4000);
     }
   };
+
   return (
     <div className="auth-container">
+      {loading && <Loader />}
+      {message && (
+        <div className="toast">
+          {message}
+          <FontAwesomeIcon
+            onClick={closeToast}
+            className="ml-2 cursor-pointer"
+            icon={faTimes}
+          />
+        </div>
+      )}
       <div className="container">
         <div className="row justify-content-center align-items-center">
           <div className="col-lg-6">

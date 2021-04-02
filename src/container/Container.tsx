@@ -9,13 +9,24 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
+import { useState } from "react";
 
 function Container() {
+  const [mobileSideMenu, setMobileSideMenu] = useState<boolean>(false);
+
+  const openSideMenuContainer = () => {
+    setMobileSideMenu(true);
+  };
+
+  const closeSideMenuContainer = () => {
+    setMobileSideMenu(false);
+  };
+
   return (
     <div className="main-wrapper">
       <Router>
-        <SideMenu />
-        <Header />
+        <SideMenu mobileSideMenu={mobileSideMenu} closeSideMenuContainer={closeSideMenuContainer} />
+        <Header openSideMenuContainer={openSideMenuContainer} />
         <Switch>
           <Redirect exact from="/" to="/dashboard" />
           <Route path="/dashboard">

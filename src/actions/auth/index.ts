@@ -8,7 +8,7 @@ interface LoginInput {
 
 type AuthAction = {
   type: string;
-  payload: IData;
+  payload ?: IData;
 };
 
 type IData = {
@@ -28,6 +28,17 @@ export const login = (loginInput: LoginInput) => async (
       user: data.user,
       token: data.token,
     },
+  };
+  dispatch(action);
+  return data;
+};
+
+export const logout = () => async (
+  dispatch: DispatchType
+) => {
+  const data = await AuthService.logout();
+  const action: AuthAction = {
+    type: actionTypes.LOGOUT_SUCCESS,
   };
   dispatch(action);
   return data;

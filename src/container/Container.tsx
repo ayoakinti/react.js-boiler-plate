@@ -1,7 +1,7 @@
 import Header from "../components/Header";
 import SideMenu from "../components/SideMenu";
 import Dashboard from "../views/Dashboard";
-import About from "../views/about/About";
+import Settings from "../views/settings/Settings";
 
 import {
   BrowserRouter as Router,
@@ -32,8 +32,8 @@ function Container() {
           <Route path="/dashboard">
             <Dashboard />
           </Route>
-          <Route path="/about">
-            <About />
+          <Route path="/settings">
+            <Settings />
           </Route>
         </Switch>
       </Router>

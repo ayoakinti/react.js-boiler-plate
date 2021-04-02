@@ -43,17 +43,6 @@ function Register() {
                       required
                     />
                   </div>
-                  <div className="auth-checkbox">
-                    <div className="d-flex align-items-center">
-                      <input
-                        type="checkbox"
-                        name="isLoggedIn"
-                        id="isLoggedIn"
-                        className="mr-1"
-                      />
-                      <label htmlFor="isLoggedIn">Keep me logged in</label>
-                    </div>
-                  </div>
                   <div className="form-group">
                     <button className="auth-btn" type="submit">
                       Register

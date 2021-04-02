@@ -49,12 +49,8 @@ function Login() {
       await dispatch(login(loginInput));
       history.push("/");
     } catch (error) {
-      // console.error(error.response.data.message);
       setMessage(error.response.data.message);
       setLoading(false);
-      // setTimeout(() => {
-      //   setMessage("");
-      // }, 4000);
     }
   };
 

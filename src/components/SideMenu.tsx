@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
 import logo from "../assets/images/logo.png"
+import { logout } from "../actions/auth"
+import { useDispatch } from "react-redux";
 
 type IProps = {
   mobileSideMenu: boolean,
@@ -8,8 +10,14 @@ type IProps = {
 
 function SideMenu({ mobileSideMenu, closeSideMenuContainer }: IProps) {
 
+  const dispatch = useDispatch();
+
   const closeSideMenu = () => {
     closeSideMenuContainer();
+  }
+
+  const logoutUser = () => {
+    dispatch(logout());
   }
   
   return (
@@ -27,9 +35,14 @@ function SideMenu({ mobileSideMenu, closeSideMenuContainer }: IProps) {
               </NavLink>
             </li>
             <li className="sidebar-item" onClick={closeSideMenu}>
-              <NavLink className="sidebar-link" to="/about">
-                <span className="">About</span>
+              <NavLink className="sidebar-link" to="/settings">
+                <span className="">Settings</span>
               </NavLink>
+            </li>
+            <li className="sidebar-item">
+              <div className="sidebar-link cursor-pointer" onClick={logoutUser}>
+                <span className="">Logout</span>
+              </div>
             </li>
           </ul>
         </nav>

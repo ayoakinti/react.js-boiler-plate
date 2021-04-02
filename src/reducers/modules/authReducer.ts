@@ -1,8 +1,14 @@
 import * as actionTypes from "../../actions/types";
 
+type IUser = {
+  firstName: string;
+  lastName: string;
+  email: string;
+};
+
 type AuthState = {
   token: string | null;
-  user: object | null;
+  user: IUser | null;
   isLoggedIn: boolean;
 };
 
@@ -12,7 +18,7 @@ type IPayload = {
 };
 
 const initialState: AuthState = {
-  token: null,
+  token: localStorage.getItem("token") || null,
   user: null,
   isLoggedIn: false,
 };
@@ -31,6 +37,13 @@ const authReducer = (state: AuthState = initialState, action: AuthAction) => {
         user: action.payload.user,
         isLoggedIn: true,
       };
+    case actionTypes.LOGOUT_SUCCESS:
+      return {
+        ...state,
+        token: null,
+        user: null,
+        isLoggedIn: false
+      }
   }
   return state;
 };

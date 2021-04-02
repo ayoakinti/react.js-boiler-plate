@@ -1,46 +1,121 @@
-# Getting Started with Create React App
+# React.js + TypeScript Boiler plate
+# Useful to quick-start applications that involve authentication and dashboard
+# To test you have to run the local server with yarn serve and login with 
+    username: reactboiletplatetest@gmail.com
+    password: boilertest
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project based on real world practice and ready to use. Have a fun!
 
-## Available Scripts
+## Features
+- Redux with TypeScript setup with login example
+- Thunk middleware + combine Reducers
+- Login server.js file included to initiate the login server
+    username: reactboiletplatetest@gmail.com
+    password: boilertest
+- Response wrapper and SideMenu for mobile
+- Common Layout components (Authentication Pages, SideMenu, Header, Settings)
+- Create React App + TypeScript
+- Developed to work with localhost server just to test Redux+login
 
-In the project directory, you can run:
+## Project structure
+- [`src`](#src)
+  - [`actions`](#assets)
+  - [`api`](#api)
+  - [`assets`](#assets)
+  - [`components`](#components)
+  - [`config`](#config)
+  - [`container`](#container)
+  - [`reducers`](#reducers)
+  - [`services`](#services)
+  - [`store`](#store)
+  - [`views`](#views)
+  - [`app.tsx`](#apptsx)
+  - [`index.tsx`](#indextsx)
 
-### `yarn start`
+### `src`
+Source =)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### `actions`
+Actions Types for interacting with the store
+- `Types` Where I exported all the various dispatch actions that would be required throughout the application
+- `Auth` Initiation of the various actions as regards Authentication. Just Login and Logout setup
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### `api`
+- This is where I did my axios configuration. Setup headers, and baseUrl
 
-### `yarn test`
+### `assets`
+Images/Scss.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `components`
+Shared components folder.
+- `Loader` It represents loading(spinloader animation) Most significant while waiting for API data.
+- `Header` - header file
+- `SideMenu` - side menu for the application. For navigation to various tabs
+- ...
 
-### `yarn build`
+### `config`
+BaseUrl for the api header
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `container`
+House of the main page. The is the parent of the SideMenu, Header, and other pages. 
+You have to be logged In to have access to this page.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `reducers`
+Reducers
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `services`
+Data access layer/API calls.
+- ES6 API calls classes.
+- `auth.service` - Auth methods and API calls.
 
-### `yarn eject`
+### `store`
+App store. Persisited store, with thunk middleware.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### `views`
+Various Pages in the application
+- auth
+   - `Login` Login to the platform
+   - `Register` Register on the platform
+   - `ForgotPassword` To reset password
+- settings
+   - `Edit Profile` Edit your personal profile
+   - `Register` Register page
+   - `ForgotPassword` ForgotPassword page
+- `dashboard` Home page of the application
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### `app.tsx`
+Root app initialization file. Houses login, register, forgot password, and container
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### `index.tsx`
+Home where store is called. Houses app.tsx
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Build Setup
+``` bash
+# clone repo
+git clone https://github.com/iamayoakinti/react.js-boiler-plate.git
 
-## Learn More
+# install dependencies
+npm install
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# serve with hot reload at localhost:3000
+yarn start
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# start local server to enable you login
+yarn serve
+
+# build for production with minification
+yarn build
+```
+
+# Amazing repos where I found some great approaches:
+- https://github.com/typescript-cheatsheets/react.git
+- https://github.com/zmts/beauty-vuejs-boilerplate.git
+
+# Amazing links that helped me understand React+TypeScript setup
+- https://www.youtube.com/watch?v=I9jfsIRnySs
+- https://www.freecodecamp.org/news/how-to-use-redux-in-your-react-typescript-app/
+- https://levelup.gitconnected.com/persisting-your-react-application-state-with-redux-and-typescript-51e4e66c4e53
+
+__!!! Project still in progress !!!__
+
+_2021 ..._

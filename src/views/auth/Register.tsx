@@ -19,13 +19,27 @@ function Register() {
               </div>
               <div className="auth-form">
                 <form onSubmit={handleRegister}>
-                  <div className="form-group">
-                    <input
-                      type="text"
-                      placeholder="Name"
-                      className="form-control"
-                      required
-                    />
+                  <div className="row">
+                    <div className="col-lg-6">
+                      <div className="form-group">
+                        <input
+                          type="text"
+                          placeholder="First Name"
+                          className="form-control"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div className="col-lg-6">
+                      <div className="form-group">
+                        <input
+                          type="text"
+                          placeholder="Last Name"
+                          className="form-control"
+                          required
+                        />
+                      </div>
+                    </div>
                   </div>
                   <div className="form-group">
                     <input

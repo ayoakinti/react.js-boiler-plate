@@ -236,11 +236,13 @@ a:hover {
   position: relative;
   transition: 0.2s ease-in;
   overflow-y: auto;
+  height: 100vh;
 }
 
 .container-fluid {
   // background-color: $primary100;
   margin: 0 39px 0 26px;
+  min-height: calc(100vh - 70px);
 }
 
 .sidebar-item {
